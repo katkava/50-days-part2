@@ -1,0 +1,61 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+</style>
+
+*{
+ box-sizing: border-box;
+}
+
+body {
+ background-image: linear-gradient(90deg, pink, purple);
+ font-family: 'Roboto', sans-serif;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 100vh;
+ overflow: hidden;
+ margin: 0;
+} 
+
+.search {
+  position: relative;
+  height: 40px;
+  margin: 0;
+}
+ 
+ /* 1: we want the input to get a bigger width onlick(active) (transform width 200px active) */
+.input {
+  background-color: white;
+  font-size: 18px;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  padding: 15px;
+  transition: width 0.9s ease;
+}
+
+/*on active the button moves to the right, transform translateX, not active, overlap the square 3rd transform to overlap search translateX 30px to left */
+.btn {
+  position: absolute;
+  font-size: 24px;
+  border: 0;
+  background-color: white;
+  top: 0;
+  left: 0; 
+  width: 50px;
+  height: 50px; 
+  transition: transform 0.3s ease;
+}
+
+.btn:focus, .input:focus
+ {
+   outline: none;
+ }
+
+ .search.active .input {
+   width: 200px;
+ }
+
+ .search.active .btn {
+   transform: translateX(198px);
+ }
